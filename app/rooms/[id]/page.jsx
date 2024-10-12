@@ -1,4 +1,3 @@
-import rooms from "@/data/rooms.json";
 import Heading from "@/components/Heading";
 import BookingForm from "@/components/BookingForm";
 import Image from "next/image";
