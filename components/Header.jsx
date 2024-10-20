@@ -85,7 +85,7 @@ const Header = () => {
               )}
               {isAuthenticated && (
                 <>
-                  <Link href="rooms/my">
+                  <Link href="/rooms/my">
                     <FaBuilding className="inline mr-1" /> My Rooms
                   </Link>
                   <button
