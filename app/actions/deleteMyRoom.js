@@ -28,7 +28,7 @@ async function deleteMyRoom(roomId) {
 
     // Find room to delete
     const roomToDelete = rooms.find((room) => room.$id === roomId);
-    console.log(`deleteMyRoom says room is ${roomToDelete}`);
+
     // Delete Room
     if (roomToDelete) {
       await databases.deleteDocument(
