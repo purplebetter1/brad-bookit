@@ -10,9 +10,10 @@ const BookingsPage = async () => {
       {bookings.length === 0 ? (
         <p className="text-gray-600 mt-4">You do not have any bookings yet</p>
       ) : (
-        bookings.map((booking) => <h3>{booking.room_id.name}</h3>)
+        bookings.map((booking) => (
+          <BookedRoomCard key={booking.$id} booking={booking} />
+        ))
       )}
-      <BookedRoomCard />
     </>
   );
 };
