@@ -1,6 +1,5 @@
-import { FaEye } from "react-icons/fa";
+import { FaEye, FaEdit } from "react-icons/fa";
 import DeleteRoomButton from "@/components/DeleteRoomButton";
-import EditRoomButton from "@/components/EditRoomButton";
 import Link from "next/link";
 
 const MyRoomCard = ({ room }) => {
@@ -17,7 +16,14 @@ const MyRoomCard = ({ room }) => {
         >
           <FaEye className="inline mr-1" /> View
         </Link>
-        <EditRoomButton roomId={room.$id} />
+        <Link
+          href={`/rooms/${room.$id}/edit`}
+          className="bg-gray-500 text-white px-4 py-2 rounded mb-2 sm:mb-0 w-full 
+    sm:w-auto text-center hover:bg-gray-700"
+        >
+          <FaEdit className="inline mr-1" /> Edit
+        </Link>
+
         <DeleteRoomButton roomId={room.$id} />
       </div>
     </div>
