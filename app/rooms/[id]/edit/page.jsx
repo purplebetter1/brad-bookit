@@ -1,16 +1,23 @@
 import EditMyRoomForm from "@/components/EditMyRoomForm";
 import Heading from "@/components/Heading";
 import getSingleRoom from "@/app/actions/getSingleRoom";
-import { toast } from "react-toastify";
+import { createAdminClient } from "@/config/appwrite";
+import { cookies } from "next/headers";
+import checkAuth from "@/app/actions/checkAuth";
+import { FaRegComment } from "react-icons/fa";
 
 const EditRoomPage = async ({ params }) => {
   const { id } = params;
-  console.log(id);
+  const { user } = await checkAuth();
 
   const room = await getSingleRoom(id);
 
   if (!room) {
     return <Heading title="Room Not Found" />;
+  }
+
+  if (user.id !== room.user_id) {
+    return <Heading title="Must own room to update" />;
   }
 
   return (

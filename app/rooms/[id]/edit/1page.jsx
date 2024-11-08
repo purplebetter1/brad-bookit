@@ -1,19 +1,16 @@
-import Heading from "@/components/Heading";
 import EditMyRoomForm from "@/components/EditMyRoomForm";
-import { toast } from "react-toastify";
-import editMyRoom from "@/app/actions/editMyRoom";
+import Heading from "@/components/Heading";
 import getSingleRoom from "@/app/actions/getSingleRoom";
 
 const EditRoomPage = async ({ params }) => {
   const { id } = params;
+  console.log(id);
 
   const room = await getSingleRoom(id);
 
   if (!room) {
     return <Heading title="Room Not Found" />;
   }
-
-  const editedRoom = await editMyRoom(id);
 
   return (
     <>

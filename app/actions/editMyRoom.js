@@ -11,7 +11,7 @@ async function editMyRoom(previousState, formData) {
     console.log(`User_id is ${user.id}`);
     if (!user) {
       return {
-        error: "You must be logged in to add a room",
+        error: "You must be logged in to edit a room",
       };
     }
 
