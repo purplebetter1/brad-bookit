@@ -1,8 +1,6 @@
 import EditMyRoomForm from "@/components/EditMyRoomForm";
 import Heading from "@/components/Heading";
 import getSingleRoom from "@/app/actions/getSingleRoom";
-import { createAdminClient } from "@/config/appwrite";
-import { cookies } from "next/headers";
 import checkAuth from "@/app/actions/checkAuth";
 import { FaRegComment } from "react-icons/fa";
 
